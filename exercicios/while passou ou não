@@ -1,0 +1,36 @@
+import os 
+
+os.system("clear || cls")
+
+nota1: float = -1
+nota2: float = -1
+nota3: float = -1
+
+while (nota1 < 0 or nota1 > 10):
+    nota1 = float (input("Digite sua primeira nota:"))
+   
+while (nota2 < 0 or nota2 > 10):
+    nota2 = float (input("Digite sua segunda nota:"))
+
+while (nota3 < 0 or nota3 > 10):
+    nota3 = float (input("Digite sua terceira nota:"))
+
+
+media: float
+media = (nota1 + nota2) / 2
+
+
+os.system("clear || cls")
+
+print("======= Exibindo Resultados =======")
+print(f"Primeira nota: {nota1}")
+print(f"Segunda nota: {nota2}") 
+print(f"Terceira nota: {nota3}")
+print(f"Média: {media}")
+
+if media >= 7:
+    print("\nAPROVADO ========")
+elif media == 5 or media == 6.9 :
+    print("\nRECUPERAÇÃO ========")
+else:
+    print("\nREPROVADO ==========")
