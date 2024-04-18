@@ -1,0 +1,19 @@
+import os
+
+soma = 0
+quantidadeValores = 0
+
+# Solicitando números e calculando a média
+while True:
+    valor = int(input("Digite um valor: "))
+    if valor < 0:
+        print("Valor inválido")
+        break
+         
+    soma += valor
+    quantidadeValores += 1
+
+
+if quantidadeValores > 0:
+    media = soma / quantidadeValores
+    print("\nA média dos valores positivos é:", media)
