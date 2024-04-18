@@ -1,0 +1,26 @@
+import os 
+
+nota: float = -1
+soma: float = 0
+
+quantidadeNotas = 3
+
+for i in range (quantidadeNotas):
+    while True:
+        nota = float(input("Digite a primeira nota:"))
+        if nota < 0 or nota > 10:
+            print("Nota inválida...\n")
+        else:
+            soma += nota
+            break
+
+media = soma / quantidadeNotas
+
+print(f"Média: {media}")
+
+if media >= 7:
+    print("Aprovado")
+elif media >= 5:
+    print("Recuperação")
+else:
+    print("Reprovado")
