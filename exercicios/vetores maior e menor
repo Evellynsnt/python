@@ -1,0 +1,27 @@
+import os 
+
+numeros= []
+maiorNumero = 0
+menorNumero = 999
+
+for i in range(5): 
+    numero = float(input(f"Insira o {i + 1}ª número:  "))
+    numeros.append(numero)
+
+    if numeros[i] > maiorNumero:
+        maiorNumero = numeros[i]
+    if numeros[i] < menorNumero:
+        menorNumero = numeros[i]
+
+for i in range (5):
+   print(f"{i+1}ª número: {numeros[i]}")
+
+os.system("cls")
+
+print(f"Maior número: {maiorNumero}")
+print(f"Menor número: {menorNumero}")
+
+
+    
+
+
