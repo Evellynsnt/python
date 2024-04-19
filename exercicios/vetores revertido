@@ -1,0 +1,19 @@
+import os
+
+numeros = []
+
+for i in range(6):
+    numero = int(input(f"Insira o {i+1}ª número:"))
+    numeros.append(numero)
+
+    if numeros[i] % 2 == 0 and numeros[i] > 0:
+        numeros[i] = numero
+    else:
+        print("Não é válido.")
+        numero = int(input(f"Insira o {i+1} número:"))
+
+os.system("cls")
+
+print("Exibindo Resultados")
+for i in reversed(range(6)):
+    print(f"{numeros[i]}")
