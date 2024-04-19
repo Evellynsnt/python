@@ -1,0 +1,19 @@
+import os
+
+numeros = []
+quantidadeNegativo = 0
+somaPositivos = 0
+
+for i in range(10):
+    numero = int(input(f"Insira o {i+1} número: "))
+    numeros.append(numero)
+
+    if numeros[i] < 0:
+        quantidadeNegativo += 1
+    else:
+        somaPositivos += numero 
+
+os.system("cls")
+
+print(f"Quantidade de números negativos: {quantidadeNegativo}")
+print(f"Soma de números positivos: {somaPositivos}")
