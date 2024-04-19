@@ -1,0 +1,19 @@
+import os
+
+numeros = []
+
+for i in range(5):
+    numero = int(input(f"Insira um número:"))
+    
+    if numero < 0:
+        numero = 0
+
+    numeros.append(numero)
+
+os.system("cls")
+
+print("Exibindo Resultados")
+for i in range(5):
+   
+    print(f"{i+1}ª número: {numeros[i]}" )
+    #end = ' '  para trazer os resultados na mesma linha
