@@ -1,0 +1,31 @@
+import os
+
+os.system("clear")
+
+numeros: int 
+contador = 0
+quantPar: int = 0
+quantImpar: int = 0
+quantPositivo: int = 0
+quantNegativo: int = 0
+quantNumeros: int = 0
+
+for i in range(5):
+    numero = int(input(f"Insira o {i+1}ª número: "))
+    contador += 1
+    if numero % 2 == 0:
+        quantPar += 1
+    if numero % 2 == 1:
+        quantImpar += 1
+
+    if numero >= 0:
+        quantPositivo += 1
+    if numero < 0:
+        quantNegativo += 1
+
+
+print(f"Quantidade de números pares: {quantPar}")
+print(f"Quantidade de números impares: {quantImpar}")
+print(f"Quantidade de números positivos: {quantPositivo}")
+print(f"Quantidade de números negativos: {quantNegativo}")
+print(f"Quantidade de números inseridos: {contador}")
