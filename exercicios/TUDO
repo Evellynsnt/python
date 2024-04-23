@@ -1,0 +1,62 @@
+import os
+
+os.system("cls")
+
+numero: int 
+contador = 0
+quantPar: int = 0
+quantImpar: int = 0
+quantPositivo: int = 0
+quantNegativo: int = 0
+quantNumerosTotal: int = 0
+somaPar: int = 0
+somaImpar: int = 0
+somaNumerosTotal: int = 0
+maiorNumero: int = 0
+menorNumero: int = 99999
+mediaPar: int = 0
+mediaImpar: int = 0
+mediaNumerosTotal: int = 0
+
+
+for i in range(5):
+    numero = int(input(f"Insira um número: "))
+    contador += 1
+    somaNumerosTotal += 1
+    mediaNumerosTotal = somaNumerosTotal/ contador
+
+    if numero % 2 == 0:
+        quantPar += 1
+        somaPar += numero
+        mediaPar = somaPar / quantPar
+
+    if numero % 2 == 1:
+        quantImpar += 1
+        somaImpar += numero
+        mediaImpar = somaImpar / quantImpar 
+
+    if numero >= 0:
+        quantPositivo += 1
+    if numero < 0:
+        quantNegativo += 1
+
+
+    if numero > maiorNumero:
+        maiorNumero = numero
+    if numero < menorNumero:
+        menorNumero = numero
+
+os.system("cls")
+
+print("======== Exibindo Resultados ========")
+print(f"Quantidade de números pares: {quantPar}")
+print(f"Quantidade de números impares: {quantImpar}")
+print(f"Quantidade de números positivos: {quantPositivo}")
+print(f"Quantidade de números negativos: {quantNegativo}")
+print(f"Maior número: {maiorNumero}")
+print(f"Menor número: {menorNumero}")
+print(f"Média dos números pares: {mediaPar}")
+print(f"Média dos números impares: {mediaImpar}")
+print(f"Média dos números inseridos: {mediaNumerosTotal}")
+
+
