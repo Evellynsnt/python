@@ -1,0 +1,83 @@
+# Declarando as variáveis.
+codigo_prato: int
+prato: str
+valor_total: float = 0.0
+pedidos = []
+
+# Função para exibir o menu
+def exibir_menu():
+    print("\n======= MENU =======")
+    print("1: Feijoada - R$20,00")
+    print("2: Lasanha - R$25,90")
+    print("3: Strogonoff - R$19,50")
+    print("4: Macarronada ao Molho Branco - R$40,00")
+    print("5: Tilápia - R$60,50")
+    print("6: Salmão ao Molho - R$80,00")
+    print("7: Bife Acebolado - R$15,00")
+
+# Solicitar ao usuário prato desejado.
+exibir_menu()
+codigo_prato = int(input("\nInsira o código do prato que deseja (0 para finalizar): "))
+
+while codigo_prato != 0:
+    if codigo_prato in [1, 2, 3, 4, 5, 6, 7]:
+        
+        if codigo_prato == 1:
+            prato = "Feijoada"
+            valor_prato = 20.00
+        
+        elif codigo_prato == 2:
+            prato = "Lasanha"
+            valor_prato = 25.90
+        
+        elif codigo_prato == 3:
+            prato = "Strogonoff"
+            valor_prato = 19.50
+        
+        elif codigo_prato == 4:
+            prato = "Macarronada ao Molho Branco"
+            valor_prato = 40.00
+       
+        elif codigo_prato == 5:
+            prato = "Tilápia"
+            valor_prato = 60.50
+        
+        elif codigo_prato == 6:
+            prato = "Salmão ao Molho"
+            valor_prato = 80.00
+        
+        elif codigo_prato == 7:
+            prato = "Bife Acebolado"
+            valor_prato = 15.00
+        
+        pedidos.append((prato, valor_prato))
+        valor_total += valor_prato  # Acumula o valor total do pedido
+    else:
+        print("Código inválido. Tente novamente.")
+
+    codigo_prato = int(input("Deseja inserir mais um prato? Digite um código (0 para finalizar): "))
+
+# Solicita a forma de pagamento
+forma_pagamento = input("\nQual a forma de pagamento (V = à vista / C = cartão de crédito): ").upper()
+
+# Calcula o valor final com base na forma de pagamento escolhida
+if forma_pagamento == "V":
+    desconto = valor_total * 0.10
+    total_pagar = valor_total - desconto
+    
+    print(f"\nForma de pagamento: À vista")
+    print(f"Desconto: R${desconto:.2f}")
+    
+elif forma_pagamento == "C":
+    acrescimo = valor_total * 0.10
+    total_pagar = valor_total + acrescimo
+    
+    print(f"\nForma de pagamento: No cartão de crédito")
+    print(f"Acréscimo (taxa): R${acrescimo:.2f}")
+    
+else:
+    print("Forma de pagamento inválida.")
+
+# Exibe o subtotal e o total a pagar
+print(f"Subtotal: R${valor_total:.2f}")
+print(f"Total a pagar: R${total_pagar:.2f}")
