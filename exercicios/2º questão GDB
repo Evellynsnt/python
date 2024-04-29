@@ -37,9 +37,9 @@ while codigoPrato != 0:
             prato = "Lasanha"
             valorPrato = 25.90
         
-        elif codigo_prato == 3:
+        elif codigoPrato == 3:
             prato = "Strogonoff"
-            valor_prato = 19.50
+            valorPrato = 19.50
         
         elif codigoPrato == 4:
             prato = "Macarronada ao Molho Branco"
@@ -58,7 +58,7 @@ while codigoPrato != 0:
             valorPrato = 15.00
         
         pedidos.append((prato, valorPrato))
-        valor_total += valor_prato  # Acumula o valor total do pedido
+        valorTotal += valorPrato 
     else:
         print("Código inválido. Tente novamente.")
 
@@ -67,7 +67,7 @@ while codigoPrato != 0:
 # Solicita a forma de pagamento
 formaPagamento = input("\nQual a forma de pagamento (V = à vista / C = cartão de crédito): ").upper()
 
-# Calcula o valor final com base na forma de pagamento escolhida
+# Forma de pagamento: á vista ou cartão de crédito
 if formaPagamento == "V":
     desconto = valorTotal * 0.10
     totalPagar = valorTotal - desconto
