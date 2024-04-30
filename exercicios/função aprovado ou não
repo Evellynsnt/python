@@ -1,0 +1,30 @@
+import os
+
+def logoSenai():
+    os.system("cls || clear")
+    print("=== SENAI ===")
+
+
+def somar(n1,n2):
+    resultado = n1 + n2
+    return resultado
+
+def mediar(n1,n2):
+    resultado = n1 + n2/ 2
+    return resultado 
+
+logoSenai()
+primeiroNumero = int(input("Digite o primeiro número: "))
+segundoNumero = int(input("Digite o segundo número: "))
+
+media = somar(primeiroNumero,segundoNumero) / 2
+
+def verificacao(media):
+    if media >= 7:
+        print("Aprovado.")
+    else: 
+        print("Reprovado")
+
+print(f"Primeiro número: {primeiroNumero}")
+print(f"Segundo número: {segundoNumero}")
+print(f"Média: {media}")
