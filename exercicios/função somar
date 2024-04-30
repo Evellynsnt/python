@@ -1,0 +1,22 @@
+import os
+
+# função sem retorno
+def logoSenai():
+    os.system("cls || clear")
+    print("=== SENAI ===")
+
+# função com retorno
+def somar(n1,n2):
+    resultado = n1 + n2
+    return resultado
+
+# solicitando dados para o usuário
+logoSenai()
+primeiroNumero = int(input("Digite o primeiro número: "))
+segundoNumero = int(input("Digite o segundo número: "))
+
+# retornando a função com o termo 'SOMAR'
+soma = somar(primeiroNumero,segundoNumero)
+
+# exibindo dados 
+print(f"Soma: {soma}")
