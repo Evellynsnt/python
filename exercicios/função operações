@@ -1,0 +1,38 @@
+import os
+
+def logoSenai():
+    os.system("cls || clear")
+    print("=== SENAI ===")
+
+def somar(n1,n2):
+    resultado = n1 + n2
+    return resultado
+
+def dividir(n1,n2):
+    resultado = n1 / n2
+    return resultado
+
+def multiplicar(n1,n2):
+    resultado = n1 * n2
+    return resultado
+
+def subtrair(n1,n2):
+    resultado = n1 - n2
+    return resultado
+
+
+primeiroNumero = int(input("Digite o primeiro número: "))
+segundoNumero = int(input("Digite o segundo número: "))
+
+
+soma = somar(primeiroNumero,segundoNumero)
+divisao = dividir(primeiroNumero,segundoNumero)
+multiplicacao = multiplicar(primeiroNumero,segundoNumero)
+subtracao = subtrair(primeiroNumero,segundoNumero)
+
+print(f"\n2Soma: {soma}")
+print(f"Divisão: {divisao}")
+print(f"Multiplição: {multiplicacao}")
+print(f"Subtração: {subtracao}")
+
+
