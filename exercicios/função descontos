@@ -1,0 +1,18 @@
+import os
+
+def logoSenai():
+    os.system("cls || clear")
+    print("=== SENAI ===")
+
+def inflacao(precoProduto):
+    if precoProduto < 100:
+       desconto = "10%"
+       totalPagar = precoProduto + 0.1
+    if precoProduto >= 100:
+        desconto = "20%"
+        totalPagar = precoProduto + 0.2
+
+precoProduto = float(input("Digite o preço do produto: "))    
+inflacao(precoProduto)   
+
+print(f"Preço do produto: {precoProduto}")
