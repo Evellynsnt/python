@@ -1,0 +1,17 @@
+import os 
+
+def logoSenai():
+    os.system("cls || clear")
+    print("=== SENAI ===")
+
+logoSenai()
+nome = input("Digite seu nome: ")
+logoSenai()
+idade = int(input("Insira sua idade: "))
+logoSenai()
+peso = float(input("Insira seu peso: "))
+
+logoSenai()
+print("Nome: {nome}")
+print("Idade: {idade}")
+print("Peso: {peso:.2f}")
