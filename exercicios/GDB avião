@@ -1,0 +1,199 @@
+class SweetFlight:
+# Inicialização dos vetores
+    def __init__(self):
+        self.reservas = []
+        self.numero_avioes = [None] * 4
+        self.assentos_disponiveis = [0] * 4
+        
+
+    def registrar_avioes():
+        print("Informe o número de cada avião:")
+        for i in range(4):
+            self.avioes[i] = input(f"Avião {i+1}: ")
+            
+    
+    def registrar_assentos_disponiveis():
+        print("Informe a quantidade de assentos disponíveis para cada avião:")
+        for i in range(4):
+            self.assentos_disponiveis[i] = int(input(f"Assentos disponíveis para o avião {avioes[i]}: "))
+            
+    
+    def reservar_passagem(self):
+        if len(self.reservas) >= 10:
+            print("Limite de reservas atingido!")
+            return
+        
+        numero_aviao = input("Informe o número do avião: ")
+        if numero_aviao not in avioes:
+            print("Este avião não existe!")
+            return
+        
+        
+        indice_aviao = self.avioes.index(numero_aviao)
+        assentos_disponiveis = self.assentos_disponiveis[indices_aviao]
+        if assentos_disponiveis[indice_aviao] == 0:
+            print("Não há assentos disponíveis para este avião!")
+            return
+        
+        nome_passageiro = input("Informe o nome do passageiro: ")
+        self.reservas.append(Reserva(numero_aviao, nome_passageiro))
+        self.assentos_disponiveis[indice_aviao] -= 1
+        print("Reserva realizada com sucesso!")
+        
+        def consulta_por_aviao(self):
+            numero_aviao = input("Informe o número do avião: ")
+            if numero_aviao not in self.avioes:
+                print("Este avião não existe!")
+                return
+            
+        reservas_aviao = [r for r in self.reservas if r.numero_aviao == numero_aviao]
+        if not reservar_aviao:
+            print("Não há reservas realizadas para este avião!")
+            return
+            
+        print("Reservas para o avião", numero_aviao)
+        for reserva in reservas_aviao:
+            print(reservas.nome_passageiro)
+            
+        def consultar_por_passageiro(self):
+            nome_passageiro = input("Informe o nome do passageiro:")
+            reservas_passageiro = [r for r in self.reservas if r.numero_avioes == numero_avioes]
+            if not reservas_passageiro:
+                print("Não há reservas realizadas neste nome!")
+                return
+            
+            print("Reservas para o passageiro ", nome_passageiro )
+            for reserva in reservas_passageiro:
+                print(reservas.numero_avioes)
+    
+
+        def menu(self):
+            print("\nMenu:")
+            print("1. Registrar número de cada avião")
+            print("2. Registrar quantitativo de assentos disponíveis em cada avião")
+            print("3. Reservar passagem aérea")
+            print("4. Realizar consulta por avião")
+            print("5. Realizar consulta por passageiro")
+            print("6. Encerrar")
+        
+            while True:
+                menu()
+                opcao = int(input("Escolha uma opção: "))
+            
+                if opcao == '1':
+                    self.registrar_avioes()
+                elif opcao == '2':
+                    self.registrar_assentos_disponiveis()
+                elif opcao == '3':
+                    self.reservar_passagens()
+                elif opcao == '4':
+                    self.consulta_por_aviao()
+                elif opcao == '5':
+                    self.consulta_por_passageiro()
+                elif opcao == '6':
+                    print("Encerrando o programa...")
+                    break
+                else:
+                    print("Opção inválida! Por favor, escolha uma opção válida.")
+                    
+class Reserva:
+    def __init__(self, numero_aviao, nome_passageiro):
+        self.numero_aviao = numero_aviao
+        self.nome_passageiro = nome_passageiro
+
+class GestaoReservas:
+    def __init__(self):
+        self.reservas = []
+        self.numero_avioes = [None] * 4
+        self.assentos_disponiveis = [0] * 4
+
+    def registrar_avioes(self):
+        print("Opção 1: Registrar o número de cada avião")
+        for i in range(4):
+            self.numero_avioes[i] = input(f"Informe o número do avião {i+1}: ")
+
+    def registrar_assentos_disponiveis(self):
+        print("Opção 2: Registrar o quantitativo de assentos disponíveis em cada avião")
+        for i in range(4):
+            self.assentos_disponiveis[i] = int(input(f"Informe a quantidade de assentos disponíveis para o avião {self.numero_avioes[i]}: "))
+
+    def reservar_passagem(self):
+        print("Opção 3: Reservar passagem aérea")
+        if len(self.reservas) >= 10:
+            print("Limite de reservas atingido!")
+            return
+        
+        numero_aviao = input("Informe o número do avião: ")
+        if numero_aviao not in self.numero_avioes:
+            print("Este avião não existe!")
+            return
+        
+        indice_aviao = self.numero_avioes.index(numero_aviao)
+        assentos_disponiveis = self.assentos_disponiveis[indice_aviao]
+        if assentos_disponiveis == 0:
+            print("Não há assentos disponíveis para este avião!")
+            return
+        
+        nome_passageiro = input("Informe o nome do passageiro: ")
+        self.reservas.append(Reserva(numero_aviao, nome_passageiro))
+        self.assentos_disponiveis[indice_aviao] -= 1
+        print("Reserva realizada com sucesso!")
+
+    def consultar_por_aviao(self):
+        print("Opção 4: Realizar consulta por avião")
+        numero_aviao = input("Informe o número do avião: ")
+        if numero_aviao not in self.numero_avioes:
+            print("Este avião não existe!")
+            return
+        
+        reservas_aviao = [reserva for reserva in self.reservas if reserva.numero_aviao == numero_aviao]
+        if not reservas_aviao:
+            print("Não há reservas realizadas para este avião!")
+            return
+        
+        print(f"Reservas para o avião {numero_aviao}:")
+        for reserva in reservas_aviao:
+            print(reserva.nome_passageiro)
+
+    def consultar_por_passageiro(self):
+        print("Opção 5: Realizar consulta por passageiro")
+        nome_passageiro = input("Informe o nome do passageiro: ")
+        reservas_passageiro = [reserva for reserva in self.reservas if reserva.nome_passageiro == nome_passageiro]
+        if not reservas_passageiro:
+            print("Não há reservas realizadas para este passageiro!")
+            return
+        
+        print(f"Reservas para o passageiro {nome_passageiro}:")
+        for reserva in reservas_passageiro:
+            print(reserva.numero_aviao)
+
+    def menu(self):
+        while True:
+            print("\nMenu:")
+            print("1. Registrar número de cada avião")
+            print("2. Registrar quantitativo de assentos disponíveis em cada avião")
+            print("3. Reservar passagem aérea")
+            print("4. Realizar consulta por avião")
+            print("5. Realizar consulta por passageiro")
+            print("6. Encerrar")
+            
+            opcao = input("Escolha uma opção: ")
+            if opcao == '1':
+                self.registrar_avioes()
+            elif opcao == '2':
+                self.registrar_assentos_disponiveis()
+            elif opcao == '3':
+                self.reservar_passagem()
+            elif opcao == '4':
+                self.consultar_por_aviao()
+            elif opcao == '5':
+                self.consultar_por_passageiro()
+            elif opcao == '6':
+                print("Encerrando o programa...")
+                break
+            else:
+                print("Opção inválida! Por favor, escolha uma opção válida.")
+
+if __name__ == "__main__":
+    gestao_reservas = GestaoReservas()
+    gestao_reservas.menu()
