@@ -1,0 +1,54 @@
+import os
+
+codigo = int
+
+def obtendo_informações(): 
+    nome = input("Insira seu nome: ")
+    idade = int(input("Insira sua idade: "))
+    email = input("Insira seu e-mail: ")
+    telefone = float(input("Insira seu telefone: "))    
+    return nome, idade, email, telefone
+
+def menu():
+    print("\n\n====== MENU ======")
+    print("1 - Mostrar nome e idade")
+    print("2 - Mostrar nome e e-mail")
+    print("3 - Mostrar nome e telefone")
+    print("4 - Mostrar todas as informações")
+    print("0 - Sair do programa")
+
+
+def main():
+    nome, idade, email, telefone = obtendo_informações()
+    
+    while True:
+        menu()
+        codigo = int(input("\nInsira o código que deseja: "))
+            
+        if codigo == 1:
+            print(f"Nome: {nome}")
+            print(f"Idade: {idade}")
+            
+        elif codigo == 2:
+            print(f"Nome: {nome}")
+            print(f"Email: {email}")
+            
+        elif codigo == 3:
+            print(f"Nome: {nome}")
+            print(f"Telefone: {telefone} ")
+            
+        elif codigo == 4:
+            print(f"Nome: {nome}")
+            print(f"Idade: {idade}")
+            print(f"Email: {email}")
+            print(f"Telefone: {telefone} ")
+            
+        elif codigo == 0:
+            print("Finalizando o programa...")
+            break
+        else:
+            print("Opção incorreta, tente novamente.")
+            
+if __name__ == "__main__": 
+    main()    
+        
