@@ -1,0 +1,86 @@
+import os 
+
+os.system("cls || clear")
+
+prato: str
+valor_prato: float
+valor_total: float
+acrescimo: float
+total_pagar: float
+
+def menu():
+    while True():
+        print("======== CARDÁPIO ========")
+        print("1. CARNE DO SOL.......... R$25,00")
+        print("2. ALMÔNDEGAS............ R$22,00")
+        print("3. FILÉ GRELHADO......... R$18,00")
+        print("4. BISTECA............... R$18,00")
+        print("5. FILÉ DE TILÁPIA....... R$22,00")
+        print("6. TAMBAQUI.............. R$22,00")
+        print("7. SALADA................ R$10,00")
+
+        codigo = int(input("Insira o código do prato que deseja: "))
+
+    def escolha_opcao():
+        menu()
+        if codigo == 1:
+            prato = "CARNE DO SOL"
+            valor_prato = 25.00
+
+        elif codigo == 2:
+            prato = "ALMÔNDEGAS"
+            valor_prato = 22.00
+
+        elif codigo == 3:
+            prato = "FILÉ GRELHADO"
+            valor_prato = 18.00
+
+        elif codigo == 4:
+            prato = "BISTECA"
+            valor_prato = 18.00
+
+        elif codigo == 5:
+            prato = "FILÉ DE TILÁPIA"
+            valor_prato = 22.00
+
+        elif codigo == 6:
+            prato = "TAMBAQUI"
+            valor_prato = 22.00
+
+        elif codigo == 7:
+            prato = "SALADA"
+            valor_prato = 10.00
+        else:
+            print("Digite uma opção válida.")
+    
+    def acumulando_valor(prato, valor_prato):
+        valor_total += valor_prato
+          
+    def forma_de_pagamento():
+        menu()
+        pagamento = str("Qual a forma de pagamento? (C: cartão de crédito / A: á vista)")
+
+        if pagamento == 'A':
+            desconto = valor_total
+            total_pagar = valor_total - desconto
+
+            print(f"Forma de pagamento: à vista")
+            print(f"Desconto: RS{desconto:.2f}")
+
+        elif pagamento == 'C':
+            desconto = valor_total * acrescimo
+            total_pagar = valor_total + desconto
+
+            print(f"\nForma de pagamento: cartão de crédito")
+            print(f"Acréscimo (taxa):R${acrescimo}:.2f")
+
+        else: 
+            print("Forma de pagamento inválida.")
+
+    print("Exibindo Resultados")
+    def exibindo_resultados():
+        print(f"SubTotal: {valor_total}:.2f") 
+        print(f"Total a pagar: {total_pagar}:.2f") 
+
+    
+
