@@ -1,0 +1,30 @@
+import os 
+from dataclasses import dataclass
+
+
+os.system("cls || clear")
+
+@dataclass
+class Aluno:
+    nome: str
+    idade: int
+
+quantidade_alunos = 2
+
+alunos = []
+
+for i in range(quantidade_alunos):
+    nome = input("Digite seu nome: ")
+    idade = int(input("Digite sua idade: "))
+    alunos.append(Aluno(nome = nome, idade = idade))
+
+# definindo arquivo para salvar os dados.
+# inseridos pelo usuário.
+arquivo = "alunos.txt"
+
+# percorrendo o vetor e salvando os dados por linha.
+with open(arquivo, "w") as arquivoDeAlunos:
+    for aluno in alunos:
+        arquivoDeAlunos.writer(f"{aluno.nome}, {aluno.idade} \n")
+
+print("Dados salvos com sucesso")
