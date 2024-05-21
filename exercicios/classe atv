@@ -1,0 +1,27 @@
+import os 
+from dataclasses import dataclass
+
+os.system("cls || clear")
+
+@dataclass
+class Aluno:
+    nome: str
+    idade: int
+
+arquivoDeOrigem = 'aluno.txt'
+
+listaAlunos = []
+
+
+with open(arquivoDeOrigem, "w") as arquivo:
+    for linha in arquivo:
+        nome, idade, peso, altura = linha.strip(),split(',')
+        listaAlunos.append(Aluno(nome=nome, idade=int(idade), peso=float(peso), altura=float(altura)))
+
+print("Exibindo dados.")
+for i in listaAlunos:
+    print("Nome: {i.nome}")
+    print("Idade: {i.idade}")
+    print("Peso: {i.peso}")
+    print("Altura: {i.altura}")
+    print()
