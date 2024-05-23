@@ -1,0 +1,40 @@
+import os
+from dataclasses import dataclass
+
+os.system("cls || clear")
+
+@dataclass
+class Livro:
+    nome: str
+    autor: str
+    categoria: str
+    preco: float
+
+quantidade_livros = 2
+
+livros = []
+
+for i in range(quantidade_livros):
+    nome = input("Insira o nome do livro: ")
+    autor = input("Insira o nome do autor: ")
+    categoria = input("Insira a sua categoria: ")
+    preco = float(input("Insira o preço do livro: "))
+    livros.append(Livro(nome = nome, autor = autor, categoria = categoria, preco = preco))
+
+# definindo arquivo para salvar os dados.
+# inseridos pelo usuário.
+# percorrendo o vetor e salvando os dados por linha, COM FUNÇÃO.
+def salvar(lista):
+    nome_arquivo = "Catagolo_Livros.txt"
+    with open(nome_arquivo, "w") as arquivo:
+        for livro in livros:
+            arquivo.write(f"{livro.nome}, {livro.autor}, {livro.categoria}, {livro.preco} \n")
+    print("\nDados salvos com sucesso.")
+
+def ler_dados_catalogo(lista):
+    arquivo_origem = "Catagolo_Livros.txt"
+    with open(arquivo_origem, "r") as arquivoLerDadosCatalogo:
+        print("============ EXIBINDO LIVROS ============")
+        for linha in arquivo_origem:
+            nome, idade, peso, altura = linha.strip(),linha.split('')
+            arquivo_origem.append(Livro(nome=nome,autor=str(autor), categoria=str(categoria), preco=float(preco)))
