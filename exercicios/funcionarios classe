@@ -1,0 +1,42 @@
+import os
+from dataclasses import dataclass
+
+os.system("cls || clear")
+
+@dataclass
+class dados_pessoais:
+    nome: str
+    nascimento: int
+    rg: float
+    cpf: float
+
+quantidade_funcionario = 2
+usuarios = []
+
+for i in range(quantidade_funcionario):
+    nome = input("Insira seu nome: ")
+    nascimento = input("Insira sua data de nascimento: ")
+    rg = input("Insira seu RG: ")
+    cpf = float(input("Insira seu CPF: "))
+    usuarios.append(dados_pessoais(nome = nome, nascimento = nascimento, rg = rg, cpf = cpf ))
+
+def salvar_dados(lista):
+    arquivo = 'Funcionarios.txt'
+    with open(arquivo, "w") as arquivoFuncionarios:
+        for usuario in usuarios:
+            arquivo.write(f"{usuario.nome}, {usuario.nascimento}, {usuario.rg}, {usuario.cpf}\n")
+    print("\nDados salvos com sucesso.")
+
+def ler_dados(lista):
+    arquivo_origem =  'Funcionarios.txt'
+    with open(arquivo_origem, "r") as arquivoFuncionarios:
+        print("=========== EXIBINDO DADOS ============")
+        for linha in arquivo_origem:
+            nome, nascimento, rg, cpf = linha.strip(),linha.split('')
+            arquivo_origem.append(dados_pessoais(nome=nome, nascimento=int(nascimento), rg=float(rg), cpf=float(cpf)))
+
+for i in usuarios:
+    print(f"Nome: {i.nome}")
+    print(f"Nascimento: {i.nascimento}")
+    print(f"RG: {i.rg}")
+    print(f"CPF: {i.cpf}")
